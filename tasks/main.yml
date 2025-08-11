@@ -1,0 +1,28 @@
+- name: Install Docker Python dependencies via apt
+  package:
+    name:
+      - python3-requests
+      - python3-docker
+      - python3-pip
+    state: present
+  become: yes
+  when: ansible_os_family == "Debian"
+
+- name: Pull Empire Docker image
+  community.docker.docker_image:
+    name: "{{ empire_image }}"
+    source: pull
+  become: true
+
+- name: Run Empire container
+  community.docker.docker_container:
+    name: "{{ empire_container_name }}"
+    image: "{{ empire_image }}"
+    state: started
+    restart_policy: unless-stopped
+    network_mode: host
+    volumes_from:
+      - "{{ empire_data_volume }}"
+    interactive: true
+    tty: true
+  become: true

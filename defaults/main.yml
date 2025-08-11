@@ -1,0 +1,3 @@
+empire_container_name: empire
+empire_image: bcsecurity/empire:latest
+empire_data_volume: empire-data
