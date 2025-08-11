@@ -1,7 +1,7 @@
 galaxy_info:
   author: jasonmull
   description: Install dockerized Empire using community.docker and geerlingguy.docker
-  license: MIT
+  license: GPLv3
   min_ansible_version: "2.10"
   platforms:
     - name: Debian
