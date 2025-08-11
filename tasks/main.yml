@@ -14,6 +14,11 @@
     source: pull
   become: true
 
+- name: Create Empire data volume
+  community.docker.docker_volume:
+    name: "{{ empire_data_volume }}"
+    state: present
+
 - name: Run Empire container
   community.docker.docker_container:
     name: "{{ empire_container_name }}"
