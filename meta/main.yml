@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: empire_c2_docker
   author: jasonmull
   description: Install dockerized Empire using community.docker and geerlingguy.docker
   license: GPLv3
