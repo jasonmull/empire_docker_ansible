@@ -26,8 +26,8 @@
     state: started
     restart_policy: unless-stopped
     network_mode: host
-    volumes_from:
-      - "{{ empire_data_volume }}"
+    volumes:
+      - "{{ empire_data_volume }}:/opt/empire"
     interactive: true
     tty: true
   become: true
