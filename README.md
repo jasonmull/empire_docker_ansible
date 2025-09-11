@@ -35,13 +35,11 @@ ludus:
     ram_gb: 4
     cpus: 2
     linux: true
-    testing:
-      snapshot: false
-      roles:
-        - jasonmull.empire_c2_docker
-      vars:
-        empire_container_name: "{{ range_id }}-empire"
-        empire_data_volume: "{{ range_id }}-empire-data"
+    roles:
+      - jasonmull.empire_c2_docker
+    role_vars:
+      empire_container_name: "{{ range_id }}-empire"
+      empire_data_volume: "{{ range_id }}-empire-data"
 ```
 
 ## Variables
@@ -67,4 +65,4 @@ docker exec -it empire /bin/bash
 
 ## License
 
-MIT
+GPLv3
