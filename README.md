@@ -28,7 +28,7 @@ ludus ansible roles list  # verify installation
 ```yaml
 ludus:
   - vm_name: "{{ range_id }}-empire-c2"
-    hostname: "empire-c2"
+    hostname: "{{ range_id }}-empire-c2"
     template: debian-12-x64-server-template
     vlan: 10
     ip_last_octet: 10
